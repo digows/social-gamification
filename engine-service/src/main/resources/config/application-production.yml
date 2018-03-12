@@ -1,0 +1,64 @@
+#GENERAL
+spring:
+  main:
+    banner-mode: console
+
+#DATA SOURCE
+  datasource:
+    url: jdbc:postgresql://google/social-gamification?useSSL=false&amp;socketFactoryArg=social-gamification:southamerica-east1:social-gamification-db&amp;socketFactory=com.google.cloud.sql.postgres.SocketFactory
+    username: postgres
+    password: Fg2u7qFq3JIyAMjJ
+    hikari:
+      maximum-pool-size: 3
+      connection-timeout: 500
+
+#JPA
+  jpa:
+    hibernate.ddl-auto: validate
+    show-sql: false
+    
+#STATIC RESOURCES
+  resources.chain:
+    cache: true
+    
+#THYMELEAF
+  thymeleaf:
+    cache: true
+    
+#MAIL
+  mail:
+    host: smtp.sendgrid.net
+    port: 465
+    username: apikey
+    password: create-account
+    from: no-reply@socialgamification.io
+    properties:
+      mail.smtp.starttls.enable: false
+      mail.smtp.starttls.required: false
+      mail.smtp.ssl.enable: true
+      mail.smtps.debug: true
+      mail.smtp.debug: true
+      mail.debug: true
+    
+#LOGGING
+logging.level:
+  br.com.eits.common.application.dwr: WARN
+  io.socialgamification.engine: WARN
+  org.directwebremoting: WARN
+  org.springframework: WARN
+  org.hibernate: WARN
+
+#FLYWAY
+flyway:
+  enabled: true
+  
+#DWR
+dwr:
+  debug: false
+  script-compressed: true
+  
+#FIREBASE
+fcm:
+  url: https://fcm.googleapis.com/fcm/send
+  api-key: create 
+
